@@ -1,6 +1,7 @@
 body {
   background-color: #d9cdbf;
   font-family: Helvetica;
+  overflow-y: hidden;
 }
 
 /* * {
@@ -16,6 +17,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem;
+  margin-bottom: 40vh;
 }
 
 .logo {
@@ -47,7 +49,7 @@ nav {
 .GS2 {
   background-color: blue;
   color: white;
-  animation: GS2 1s 1 linear;
+  animation: GS2 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -70,27 +72,29 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
-  width: 80vh;
-  margin: auto;
-  animation: main 1s 1 linear;
+  align-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.main_animate {
+  animation: main 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  /* animation-delay: 2s; */
 }
 
 @keyframes main {
   0% {
       transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(120deg);
-      
+      transform-origin: 50% 50%;
   }
 
   100% {
     transform: rotate(120deg);
-      
+    transform-origin: 50% 50%;
   }
 }
 
@@ -100,54 +104,67 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
-  width: 80vh;
-  margin: auto;
-  animation: article 1s 1 linear;
+  align-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.article_animate {
+  animation: article 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 4s;
+  /* animation-delay: 4s; */
 }
 
 @keyframes article {
   0% {
       transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(120deg);
-      
+      transform-origin: 50% 50%;
   }
 
   100% {
     transform: rotate(120deg);
+    transform-origin: 50% 50%;
       
   }
 }
 
-.main  {
-  display: flex;
+#mainDiv  {
+  display: none;
   flex-direction: column;
   align-items: center;
-  height: 80vh;
-  width: 80vh;
-  margin: auto;
-  animation: mainDiv 1s 1 linear;
+  align-content: center;
+  position: relative;
+  height: 100vh;
+  width: 100vh;
+  border-radius: 50%;
+  margin-inline: auto;
+  transform: rotate(240deg);
+}
+
+.mainDiv_animate {
+  animation: mainDiv 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes mainDiv {
   0% {
-      transform: rotate(0deg);
+      transform: rotate(240deg);
+      transform-origin: 50% 50%;
   }
 
   50% {
-    transform: rotate(120deg);
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
       
   }
 
   100% {
-    transform: rotate(120deg);
+    transform: rotate(360deg);
+    transform-origin: 50% 50%;
       
   }
 }
@@ -159,34 +176,113 @@ article {
     align-content: center;
 }
 
+.GS2 {
+  position: absolute;
+  top: 90.5vh;
+}
+
 .tas {
-  font-size: 7em;
+  font-size: 20em;
   color: white;
   align-content: center;
   margin-top: auto;
   z-index: 9999999999999999;
+  position: absolute;
+  top: 70vh;
+}
+
+.tas_animate {
+  animation: tas 1s 1 ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tas {
+  0% {
+      top: 70vh;
+      display: block;
+  }
+
+  100% {
+    top: 130vh;
+     display: none;
+  }
+}
+
+.tas2  {
+  font-size: 20em;
+  color: white;
+  align-content: center;
+  margin-top: auto;
+  z-index: 9999999999999999;
+  position: absolute;
+  display: block;
+  top: -40vh;
+}
+
+.tas2_animate {
+  animation: tas2 1s 1 ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+@keyframes tas2 {
+  0% {
+      top: -40vh;
+      display: block;
+  }
+
+  10% {
+    top: -40vh;
+     display: block;
+  }
+
+  100% {
+    top: 20vh;
+    display: block;
+      
+  }
 }
 
 .images {
     /* height: 60vh; */
+    position: absolute;
+    top: 50;
 }
 
+  .images2 {
+    /* height: 60vh; */
+    position: absolute;
+    top: 50;
+  }
+
 .image {
-  height: 250px;
-  width: 120px;
-  border-radius: 40px;
+  height: 30vh;
+  width: 15vh;
+  border-radius: 50px;
   border: none;
   outline: none;
 }
 
 .fash1 {
   position: absolute;
+  top: 50;
+  z-index: 999999999999999999;
+}
+
+.fash1b {
+  position: absolute;
+  top: 50;
+  z-index: 999999999999999999;
 }
 
 .fash2 {
   position: absolute;
+  top: 50;
   transform: rotate(2.5deg);
-  animation: fash2 1s 1 linear;
+}
+
+.fash2_animate {
+  animation: fash2 1s 1 ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -197,45 +293,57 @@ article {
   }
 
   50% {
-      margin-left: 20vh;
-      margin-top: 15vh;
+      margin-left: 49vh;
+      margin-top: 10vh;
       transform: rotate(45deg);
   }
 
   100% {
-      margin-left: 20vh;
-      margin-top: 15vh;
+      margin-left: 49vh;
+      margin-top: 10vh;
       transform: rotate(45deg);
   }
 }
 
-/* .fash2b {
+.fash2b {
   position: absolute;
-  animation: fash2b 1s 1 linear;
+  top: 50;
+  
+  margin-left: 49vh;
+  margin-top: 10vh;
+transform: rotate(45deg);
+}
+
+.fash2b_animate {
+  animation: fash2b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 
 }
 
 @keyframes fash2b {
   0% {
-      
-    margin-left: 20vh;
-    margin-top: 15vh;
+    
+      margin-left: 49vh;
+      margin-top: 10vh;
     transform: rotate(45deg);
   }
 
   100% {
-      margin-left: 0vh;
-      margin-top: 0vh;
-      transform: rotate(2.5deg);
+    margin-left: 0vh;
+    margin-top: 0vh;
+      transform: rotate(2.5deg)
   }
-} */
+}
 
 .fash3 {
   position: absolute;
+  top: 50;
   transform: rotate(5deg);
-  animation: fash3 1s 1 linear;
+}
+
+.fash3_animate {
+  animation: fash3 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -246,29 +354,36 @@ article {
   }
 
   50% {
-      margin-left: 40vh;
-      margin-top: 30vh;
+      margin-left: 70vh;
+      margin-top: 33vh;
       transform: rotate(90deg);
   }
 
   100% {
-    margin-left: 40vh;
-    margin-top: 30vh;
+    margin-left: 70vh;
+    margin-top: 33vh;
     transform: rotate(90deg);
   }
 }
 
-/* .fash3b {
+.fash3b {
   position: absolute;
-  animation: fash3b 1s 1 linear;
+  top: 50;
+  margin-left: 70vh;
+  margin-top: 33vh;
+transform: rotate(90deg);
+}
+
+.fash3b_animate {
+  animation: fash3b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash3b {
   0% {
-    margin-left: 40vh;
-    margin-top: 30vh;
+      margin-left: 70vh;
+      margin-top: 33vh;
     transform: rotate(90deg);
   }
 
@@ -277,13 +392,17 @@ article {
     margin-top: 0vh;
     transform: rotate(5deg);
   }
-} */
+}
 
 .fash4 {
   position: absolute;
+  top: 50;
 
   transform: rotate(7.5deg);
-  animation: fash4 1s 1 linear;
+}
+
+.fash4_animate {
+  animation: fash4 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -294,30 +413,37 @@ article {
   }
 
   50% {
-      margin-left: 20vh;
-      margin-top: 45vh;
+      margin-left: 52vh;
+      margin-top: 58.5vh;
       transform: rotate(135deg);
   }
 
   100% {
-      margin-left: 20vh;
-      margin-top: 45vh;
+      margin-left: 52vh;
+      margin-top: 58.5vh;
       transform: rotate(135deg);
   }
 }
 
-/* .fash4b {
+.fash4b {
   position: absolute;
-  animation: fash4b 1s 1 linear;
+  top: 50;
+  margin-left: 52vh;
+  margin-top: 58.5vh;
+transform: rotate(135deg);
+}
+
+.fash4b_animate {
+  animation: fash4b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash4b {
   0% {
-    margin-left: 20vh;
-    margin-top: 45vh;
-    transform: rotate(135deg);;
+      margin-left: 52vh;
+      margin-top: 58.5vh;
+    transform: rotate(135deg);
   }
 
   100% {
@@ -325,11 +451,15 @@ article {
       margin-top: 0vh;
       transform: rotate(7.5deg);
   }
-} */
+}
 
 .fash5 {
   position: absolute;
-  animation: fash5 1s 1 linear;
+  top: 50;
+}
+
+.fash5_animate {
+  animation: fash5 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -342,28 +472,35 @@ article {
 
   50% {
       margin-left: 0vh;
-      margin-top: 60vh;
+      margin-top: 69.8vh;
       transform: rotate(180deg);
   }
 
   100% {
       margin-left: 0vh;
-      margin-top: 60vh;
+      margin-top: 69.8vh;
       transform: rotate(180deg);
   }
 }
 
-/* .fash5b {
+.fash5b {
   position: absolute;
-  animation: fash5b 1s 1 linear;
+  top: 50;
+  margin-left: 0vh;
+  margin-top: 69.8vh;
+transform: rotate(180deg);
+}
+
+.fash5b_animate {
+  animation: fash5b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash5b {
   0% {
-    margin-left: 0vh;
-    margin-top: 60vh;
+      margin-left: 0vh;
+      margin-top: 69.8vh;
     transform: rotate(180deg);
   }
 
@@ -372,13 +509,17 @@ article {
       margin-top: 0vh;
       transform: rotate(0deg);
   }
-} */
+}
 
 .fash6 {
   position: absolute;
+  top: 50;
 
   transform: rotate(-2.5deg);
-  animation: fash6 1s 1 linear;
+}
+
+.fash6_animate {
+  animation: fash6 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -389,29 +530,36 @@ article {
   }
 
   50% {
-      margin-left: -20vh;
-      margin-top: 15vh;
+      margin-left: -49vh;
+      margin-top: 10vh;
       transform: rotate(-45deg);
   }
 
   100% {
-      margin-left: -20vh;
-      margin-top: 15vh;
+      margin-left: -49vh;
+      margin-top: 10vh;
       transform: rotate(-45deg);
   }
 }
 
-/* .fash6b {
+.fash6b {
   position: absolute;
-  animation: fash6b 1s 1 linear;
+  top: 50;
+  margin-left: -49vh;
+  margin-top: 10vh;
+transform: rotate(-45deg);
+}
+
+.fash6b_animate {
+  animation: fash6b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash6b {
   0% {
-    margin-left: -20vh;
-    margin-top: 15vh;
+      margin-left: -49vh;
+      margin-top: 10vh;
     transform: rotate(-45deg);
   }
 
@@ -420,12 +568,16 @@ article {
       margin-top: 0vh;
       transform: rotate(-2.5deg);
   }
-} */
+}
 
 .fash7 {
   position: absolute;
+  top: 50;
   transform: rotate(-5deg);
-  animation: fash7 1s 1 linear;
+}
+
+.fash7_animate {
+  animation: fash7 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -436,29 +588,36 @@ article {
   }
 
   50% {
-      margin-left: -40vh;
-      margin-top: 30vh;
+      margin-left: -70vh;
+      margin-top: 33vh;
       transform: rotate(-90deg);
   }
 
   100% {
-      margin-left: -40vh;
-      margin-top: 30vh;
+      margin-left: -70vh;
+      margin-top: 33vh;
       transform: rotate(-90deg);
   }
 }
 
-/* .fash7b {
+.fash7b {
   position: absolute;
-  animation: fash7b 1s 1 linear;
+  top: 50;
+  margin-left: -70vh;
+  margin-top: 33vh;
+transform: rotate(-90deg);
+}
+
+.fash7b_animate {
+  animation: fash7b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash7b {
   0% {
-    margin-left: -40vh;
-    margin-top: 30vh;
+      margin-left: -70vh;
+      margin-top: 33vh;
     transform: rotate(-90deg);
   }
 
@@ -467,13 +626,17 @@ article {
       margin-top: 0vh;
       transform: rotate(-5deg);
   }
-} */
+}
 
 .fash8 {
   position: absolute;
+  top: 50;
 
   transform: rotate(-7.5deg);
-  animation: fash8 1s 1 linear;
+}
+
+.fash8_animate {
+  animation: fash8 1s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -484,29 +647,36 @@ article {
   }
 
   50% {
-      margin-left: -20vh;
-      margin-top: 45vh;
+      margin-left: -52vh;
+      margin-top: 58.5vh;
       transform: rotate(-135deg);
   }
 
   100% {
-      margin-left: -20vh;
-      margin-top: 45vh;
+      margin-left: -52vh;
+      margin-top: 58.5vh;
       transform: rotate(-135deg);
   }
 }
 
-/* .fash8b {
+.fash8b {
   position: absolute;
-  animation: fash8b 1s 1 linear;
+  top: 50;
+  margin-left: -52vh;
+  margin-top: 58.5vh;
+transform: rotate(-135deg);
+}
+
+.fash8b_animate {
+  animation: fash8b 1s 1 ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 6s;
+  /* animation-delay: .5s; */
 }
 
 @keyframes fash8b {
   0% {
-    margin-left: -20vh;
-    margin-top: 45vh;
+      margin-left: -52vh;
+      margin-top: 58.5vh;
     transform: rotate(-135deg);
   }
 
@@ -515,4 +685,4 @@ article {
       margin-top: 0vh;
       transform: rotate(-7.5deg);
   }
-} */
+}
