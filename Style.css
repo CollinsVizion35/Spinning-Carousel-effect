@@ -1,7 +1,8 @@
 body {
   background-color: #d9cdbf;
   font-family: Helvetica;
-  overflow-y: hidden;
+  overflow: hidden;
+  cursor:grabbing;
 }
 
 /* * {
@@ -17,7 +18,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   padding: 2rem;
-  margin-bottom: 40vh;
+  margin-bottom: 30vh;
 }
 
 .logo {
@@ -49,22 +50,26 @@ nav {
 .GS2 {
   background-color: blue;
   color: white;
-  animation: GS2 1s 1 ease-out;
+  margin-top: 3em;
+}
+
+.GS2_animate {
+  animation: GS2 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
 @keyframes GS2 {
   0% {
       margin-left: 0em;
-      margin-top: 2em;
+      margin-top: 6em;
   }
 
   50% {
-      margin-top: 4em;
+      margin-top: 12em;
   }
 
   100% {
-      margin-top: 4em;
+      margin-top: 12em;
   }
 }
 
@@ -81,7 +86,7 @@ main {
 }
 
 .main_animate {
-  animation: main 1s 1 ease-out;
+  animation: main 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: 2s; */
 }
@@ -113,7 +118,7 @@ article {
 }
 
 .article_animate {
-  animation: article 1s 1 ease-out;
+  animation: article 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: 4s; */
 }
@@ -145,7 +150,7 @@ article {
 }
 
 .mainDiv_animate {
-  animation: mainDiv 1s 1 ease-out;
+  animation: mainDiv 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -178,27 +183,29 @@ article {
 
 .GS2 {
   position: absolute;
-  top: 90.5vh;
+  top: 87vh;
 }
 
 .tas {
-  font-size: 20em;
+  font-size: 10vw;
   color: white;
   align-content: center;
   margin-top: auto;
   z-index: 9999999999999999;
   position: absolute;
   top: 70vh;
+  opacity: 90%;
+  fill-opacity: 90%;
 }
 
 .tas_animate {
-  animation: tas 1s 1 ease-out;
+  animation: tas 1.5s 1 ease-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes tas {
   0% {
-      top: 70vh;
+      top: 65vh;
       display: block;
   }
 
@@ -208,19 +215,45 @@ article {
   }
 }
 
+.tas_return_animate {
+  animation: tasR 1.5s 1 ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes tasR {
+  0% {
+    visibility: hidden;
+      opacity: 0;
+      fill-opacity: 0%;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 50%;
+    fill-opacity: 50%;
+  }
+
+  100% {
+    opacity: 90%;
+    fill-opacity: 90%;
+  }
+}
+
 .tas2  {
-  font-size: 20em;
+  font-size: 10vw;
   color: white;
   align-content: center;
   margin-top: auto;
   z-index: 9999999999999999;
   position: absolute;
   display: block;
-  top: -40vh;
+  top: -100vh;
+  fill-opacity: 50%;
+  opacity: 50%;
 }
 
 .tas2_animate {
-  animation: tas2 1s 1 ease-out;
+  animation: tas2 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 }
@@ -282,7 +315,7 @@ article {
 }
 
 .fash2_animate {
-  animation: fash2 1s 1 ease-out;
+  animation: fash2 1.5s 1 ease-out;
   animation-fill-mode: forwards;
 }
 
@@ -315,7 +348,7 @@ transform: rotate(45deg);
 }
 
 .fash2b_animate {
-  animation: fash2b 1s 1 ease-out;
+  animation: fash2b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 
@@ -343,7 +376,7 @@ transform: rotate(45deg);
 }
 
 .fash3_animate {
-  animation: fash3 1s 1 ease-out;
+  animation: fash3 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -375,7 +408,7 @@ transform: rotate(90deg);
 }
 
 .fash3b_animate {
-  animation: fash3b 1s 1 ease-out;
+  animation: fash3b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -402,7 +435,7 @@ transform: rotate(90deg);
 }
 
 .fash4_animate {
-  animation: fash4 1s 1 ease-out;
+  animation: fash4 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -434,7 +467,7 @@ transform: rotate(135deg);
 }
 
 .fash4b_animate {
-  animation: fash4b 1s 1 ease-out;
+  animation: fash4b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -459,7 +492,7 @@ transform: rotate(135deg);
 }
 
 .fash5_animate {
-  animation: fash5 1s 1 ease-out;
+  animation: fash5 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -492,7 +525,7 @@ transform: rotate(180deg);
 }
 
 .fash5b_animate {
-  animation: fash5b 1s 1 ease-out;
+  animation: fash5b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -519,7 +552,7 @@ transform: rotate(180deg);
 }
 
 .fash6_animate {
-  animation: fash6 1s 1 ease-out;
+  animation: fash6 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -551,7 +584,7 @@ transform: rotate(-45deg);
 }
 
 .fash6b_animate {
-  animation: fash6b 1s 1 ease-out;
+  animation: fash6b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -577,7 +610,7 @@ transform: rotate(-45deg);
 }
 
 .fash7_animate {
-  animation: fash7 1s 1 ease-out;
+  animation: fash7 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -609,7 +642,7 @@ transform: rotate(-90deg);
 }
 
 .fash7b_animate {
-  animation: fash7b 1s 1 ease-out;
+  animation: fash7b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -636,7 +669,7 @@ transform: rotate(-90deg);
 }
 
 .fash8_animate {
-  animation: fash8 1s 1 ease-out;
+  animation: fash8 1.5s 1 ease-out;
   animation-fill-mode: forwards
 }
 
@@ -668,7 +701,7 @@ transform: rotate(-135deg);
 }
 
 .fash8b_animate {
-  animation: fash8b 1s 1 ease-out;
+  animation: fash8b 1.5s 1 ease-out;
   animation-fill-mode: forwards;
   /* animation-delay: .5s; */
 }
@@ -684,5 +717,19 @@ transform: rotate(-135deg);
       margin-left: 0vh;
       margin-top: 0vh;
       transform: rotate(-7.5deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .GS1 {
+    display: none;
+  }
+
+  .navBars {
+    display: none;
+  }
+
+  .tas {
+    top: 80vh;
   }
 }
